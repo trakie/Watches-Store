@@ -1,0 +1,115 @@
+﻿@using Watches.Models
+@model List<CartModel>
+@{ 
+    KHACHHANG kh = (KHACHHANG)Session["UserID"];
+}
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/Layout_DatHang.cshtml";
+}
+
+<div class="checkout__form">
+    <h4>Đơn Hàng</h4>
+    <form action="/ListCart/DatHang" method="post">
+        <div class="row">
+            <div class="col-lg-8 col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Họ Tên: @kh.HoTen</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        
+                    </div>
+                </div>
+                <div class="checkout__input">
+                   
+                </div>
+                <div class="checkout__input">
+                    <p>Address: @kh.DiachiKH</p>
+                 
+                </div>
+                <div class="checkout__input">
+                    <p>Ngày đặt: @DateTime.Now.ToShortDateString()</p>
+                </div>
+              
+                <div class="checkout__input">
+                   
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Phone: @kh.DienthoaiKH</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="checkout__input">
+                            <p>Email: @kh.Email</p>
+                          
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout__input__checkbox">
+                    <label for="acc">
+                        
+                    </label>
+                </div>
+                <p>
+                  
+                </p>
+                <div class="checkout__input">
+                    
+                </div>
+                <div class="checkout__input__checkbox">
+                    <label for="diff-acc">
+                        
+                    </label>
+                </div>
+                <div class="checkout__input">
+                   
+                  
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="checkout__order">
+                    <h4>Your Order</h4>
+                    <div class="checkout__order__products">Products <span>Total</span></div>
+                    <ul>
+                        @foreach (var item in Model)
+                        {
+                            <li>@item.ProductName<span>@item.Total</span></li>
+                        }
+
+
+                    </ul>
+                 
+                    <div class="checkout__order__total">Total <span>@ViewBag.TongTien</span></div>
+                    <div class="checkout__input__checkbox">
+                        <label for="acc-or">
+                       
+                        </label>
+                    </div>
+                    <p>
+                      
+                    </p>
+                    <div class="checkout__input__checkbox">
+                        <label for="payment">
+                           
+                        </label>
+                    </div>
+                    <div class="checkout__input__checkbox">
+                        <label for="paypal">
+                           
+                        </label>
+                    </div>
+                    <button type="submit" class="site-btn">Xác nhận đơn hàng</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "BaoHanh";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+    List<CHITIETDONTHANG> products = ViewData["ListSP"] as List<CHITIETDONTHANG>;
+    List<String> BaoHanh = ViewData["BaoHanh"] as List<String>;
+}
+
+<h2>BaoHanh</h2>
+
+<form action="/Admin/BaoHanh" method="post" new { enctype="multipart/form-data" }>
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <b>Mã đơn hàng</b>
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.MaLoai, new { htmlAttributes = new { @class = "form-control" } })*@
+                <input type="text" name="Order" placeholder="product" required>
+                @*@Html.DropDownList("Order")*@
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <b>Mã sản phẩm</b>
+            <div class="col-md-10">-->
+        @*@Html.EditorFor(model => model.MaNCC, new { htmlAttributes = new { @class = "form-control" } })*@
+        <!--<input type="text" name="product" placeholder="product" required>
+
+            </div>
+        </div>-->
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Check bảo hành" class="btn btn-gradient-success" />
+            </div>
+        </div>
+    </div>
+
+</form>
+@if (ViewData["ListSP"] != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Thời Lượng Bảo Hành
+            </th>
+
+            <th>
+                Trong thời hạn bảo hành
+            </th>
+        </tr>
+
+        @for (int i = 0; i < products.Count; i++)
+        {
+            <tr>
+
+                <td>
+                    @products[i].SANPHAM.TenSP
+                </td>
+                <td>
+                    @products[i].SANPHAM.ThoiLuongBaoHanh
+                </td>
+                <td>
+                    @BaoHanh[i]
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+    <form action="/Admin/BaoHanh" method="post">
+        <div class="user-details">
+            @*<div class="input-box">
+                    <span class="details">Mã admin:</span>
+
+                    <input type="text" name="MaAdmin" placeholder="Nhập mã admin" required>
+                    @ViewData["Loi5"]
+                </div>*@
+            <div class="input-box">
+                <span class="details">Lý do bảo hành</span>
+
+                <input type="text" name="LyDo" required>
+
+            </div>
+            <div class="button">
+                <input type="submit" value="Lưu lý do bảo hành">
+            </div>
+        </div>
+    </form>
+}

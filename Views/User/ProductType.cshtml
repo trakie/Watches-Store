@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Watches.SANPHAM>
+
+@{
+    ViewBag.Title = "ProductType";
+}
+
+<div class="container">        
+    <h2>DANH SÁCH SẢN PHẨM</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 col-12" style="padding: 30px">
+                <a href="@Url.Action("ProductDetail", new { @id=@item.MaSP })">
+                    <div style="width: 250px; height: 250px">
+                        <img style="max-width: 100%; max-height: 100%; object-fit: contain" src="~/Content/Images/@item.AnhSP" alt="Hinh san pham" />
+                    </div>
+                    <div>
+                        <h4 style="color:black"><b>@Html.DisplayFor(modelItem => item.TenSP)</b></h4>
+                        <h4 style="color:black">@Html.DisplayFor(modelItem => item.Giaban) VNĐ</h4>
+                    </div>
+                </a>
+
+            </div>
+        }
+    </div>
+</div>
+
+<p style="padding-top:20px">
+    @Html.ActionLink("Back to List", "Index")
+</p>

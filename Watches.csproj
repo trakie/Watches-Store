@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F3565EA-9C9E-4387-83CA-C6AC8D4400FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyThietBiDienTu6</RootNamespace>
+    <AssemblyName>QuanLyThietBiDienTu6</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44377</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <!--<Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>-->
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CHITIETDONTHANG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListCartController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DanhGia.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DONDATHANG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KHACHHANG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSP.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartModel.cs" />
+    <Compile Include="NHACUNGCAP.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SANPHAM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="TemplateAdmin\assets\css\style.css" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\circle.png" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\circle.svg" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\img_1.jpg" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\img_2.jpg" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\img_3.jpg" />
+    <Content Include="TemplateAdmin\assets\images\dashboard\img_4.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces-clipart\pic-1.png" />
+    <Content Include="TemplateAdmin\assets\images\faces-clipart\pic-2.png" />
+    <Content Include="TemplateAdmin\assets\images\faces-clipart\pic-3.png" />
+    <Content Include="TemplateAdmin\assets\images\faces-clipart\pic-4.png" />
+    <Content Include="TemplateAdmin\assets\images\faces\face1.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face10.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face11.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face12.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face13.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face14.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face15.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face16.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face17.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face18.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face19.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face2.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face20.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face21.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face22.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face23.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face24.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face25.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face26.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face27.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face3.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face4.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face5.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face6.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face7.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face8.jpg" />
+    <Content Include="TemplateAdmin\assets\images\faces\face9.jpg" />
+    <Content Include="TemplateAdmin\assets\images\favicon.ico" />
+    <Content Include="TemplateAdmin\assets\images\favicon.png" />
+    <Content Include="TemplateAdmin\assets\images\logo-mini.svg" />
+    <Content Include="TemplateAdmin\assets\images\logo.svg" />
+    <Content Include="TemplateAdmin\assets\images\sprites\blue.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\dark.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\flag.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\green.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\jsgrid-icons.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\red.png" />
+    <Content Include="TemplateAdmin\assets\images\sprites\yellow.png" />
+    <Content Include="TemplateAdmin\assets\js\chart.js" />
+    <Content Include="TemplateAdmin\assets\js\dashboard.js" />
+    <Content Include="TemplateAdmin\assets\js\file-upload.js" />
+    <Content Include="TemplateAdmin\assets\js\hoverable-collapse.js" />
+    <Content Include="TemplateAdmin\assets\js\jquery.cookie.js" />
+    <Content Include="TemplateAdmin\assets\js\misc.js" />
+    <Content Include="TemplateAdmin\assets\js\off-canvas.js" />
+    <Content Include="TemplateAdmin\assets\js\todo.js" />
+    <Content Include="TemplateAdmin\assets\js\todolist.js" />
+    <Content Include="TemplateAdmin\assets\vendors\chart.js\Chart.min.js" />
+    <Content Include="TemplateAdmin\assets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="TemplateAdmin\assets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="TemplateAdmin\pages\charts\chartjs.html" />
+    <Content Include="TemplateAdmin\pages\forms\basic_elements.html" />
+    <Content Include="TemplateAdmin\pages\icons\mdi.html" />
+    <Content Include="TemplateAdmin\pages\samples\blank-page.html" />
+    <Content Include="TemplateAdmin\pages\samples\error-404.html" />
+    <Content Include="TemplateAdmin\pages\samples\error-500.html" />
+    <Content Include="TemplateAdmin\pages\samples\login.html" />
+    <Content Include="TemplateAdmin\pages\samples\register.html" />
+    <Content Include="TemplateAdmin\pages\tables\basic-table.html" />
+    <Content Include="TemplateAdmin\pages\ui-features\buttons.html" />
+    <Content Include="TemplateAdmin\pages\ui-features\typography.html" />
+    <Content Include="Template\CssDN\style.css" />
+    <Content Include="Template\CssRegister\style.css" />
+    <Content Include="Template\css\bootstrap.min.css" />
+    <Content Include="Template\css\elegant-icons.css" />
+    <Content Include="Template\css\font-awesome.min.css" />
+    <Content Include="Template\css\jquery-ui.min.css" />
+    <Content Include="Template\css\nice-select.css" />
+    <Content Include="Template\css\owl.carousel.min.css" />
+    <Content Include="Template\css\slicknav.min.css" />
+    <Content Include="Template\css\style.css" />
+    <Content Include="Template\CSS_Edit\style.css" />
+    <Content Include="Template\CSS_Edit\style1.css" />
+    <Content Include="Template\CSS_PD\style.css" />
+    <Content Include="Template\fonts\ElegantIcons.svg" />
+    <Content Include="Template\fonts\fontawesome-webfont.svg" />
+    <Content Include="Template\img\banner\banner-1.jpg" />
+    <Content Include="Template\img\banner\banner-2.jpg" />
+    <Content Include="Template\img\blog\blog-1.jpg" />
+    <Content Include="Template\img\blog\blog-2.jpg" />
+    <Content Include="Template\img\blog\blog-3.jpg" />
+    <Content Include="Template\img\blog\blog-4.jpg" />
+    <Content Include="Template\img\blog\blog-5.jpg" />
+    <Content Include="Template\img\blog\blog-6.jpg" />
+    <Content Include="Template\img\blog\details\details-author.jpg" />
+    <Content Include="Template\img\blog\details\details-hero.jpg" />
+    <Content Include="Template\img\blog\details\details-pic.jpg" />
+    <Content Include="Template\img\blog\sidebar\sr-1.jpg" />
+    <Content Include="Template\img\blog\sidebar\sr-2.jpg" />
+    <Content Include="Template\img\blog\sidebar\sr-3.jpg" />
+    <Content Include="Template\img\breadcrumb.jpg" />
+    <Content Include="Template\img\cart\cart-1.jpg" />
+    <Content Include="Template\img\cart\cart-2.jpg" />
+    <Content Include="Template\img\cart\cart-3.jpg" />
+    <Content Include="Template\img\categories\cat-1.jpg" />
+    <Content Include="Template\img\categories\cat-2.jpg" />
+    <Content Include="Template\img\categories\cat-3.jpg" />
+    <Content Include="Template\img\categories\cat-4.jpg" />
+    <Content Include="Template\img\categories\cat-5.jpg" />
+    <Content Include="Template\img\featured\feature-1.jpg" />
+    <Content Include="Template\img\featured\feature-2.jpg" />
+    <Content Include="Template\img\featured\feature-3.jpg" />
+    <Content Include="Template\img\featured\feature-4.jpg" />
+    <Content Include="Template\img\featured\feature-5.jpg" />
+    <Content Include="Template\img\featured\feature-6.jpg" />
+    <Content Include="Template\img\featured\feature-7.jpg" />
+    <Content Include="Template\img\featured\feature-8.jpg" />
+    <Content Include="Template\img\hero\banner.jpg" />
+    <Content Include="Template\img\language.png" />
+    <Content Include="Template\img\latest-product\lp-1.jpg" />
+    <Content Include="Template\img\latest-product\lp-2.jpg" />
+    <Content Include="Template\img\latest-product\lp-3.jpg" />
+    <Content Include="Template\img\logo.png" />
+    <Content Include="Template\img\payment-item.png" />
+    <Content Include="Template\img\product\details\product-details-1.jpg" />
+    <Content Include="Template\img\product\details\product-details-2.jpg" />
+    <Content Include="Template\img\product\details\product-details-3.jpg" />
+    <Content Include="Template\img\product\details\product-details-4.jpg" />
+    <Content Include="Template\img\product\details\product-details-5.jpg" />
+    <Content Include="Template\img\product\details\thumb-1.jpg" />
+    <Content Include="Template\img\product\details\thumb-2.jpg" />
+    <Content Include="Template\img\product\details\thumb-3.jpg" />
+    <Content Include="Template\img\product\details\thumb-4.jpg" />
+    <Content Include="Template\img\product\discount\pd-1.jpg" />
+    <Content Include="Template\img\product\discount\pd-2.jpg" />
+    <Content Include="Template\img\product\discount\pd-3.jpg" />
+    <Content Include="Template\img\product\discount\pd-4.jpg" />
+    <Content Include="Template\img\product\discount\pd-5.jpg" />
+    <Content Include="Template\img\product\discount\pd-6.jpg" />
+    <Content Include="Template\img\product\product-1.jpg" />
+    <Content Include="Template\img\product\product-10.jpg" />
+    <Content Include="Template\img\product\product-11.jpg" />
+    <Content Include="Template\img\product\product-12.jpg" />
+    <Content Include="Template\img\product\product-2.jpg" />
+    <Content Include="Template\img\product\product-3.jpg" />
+    <Content Include="Template\img\product\product-4.jpg" />
+    <Content Include="Template\img\product\product-5.jpg" />
+    <Content Include="Template\img\product\product-6.jpg" />
+    <Content Include="Template\img\product\product-7.jpg" />
+    <Content Include="Template\img\product\product-8.jpg" />
+    <Content Include="Template\img\product\product-9.jpg" />
+    <Content Include="Template\img_store\DT.jpg" />
+    <Content Include="Template\img_store\IP14.jpg" />
+    <Content Include="Template\img_store\Lap.jpg" />
+    <Content Include="Template\img_store\PC.png" />
+    <Content Include="Template\img_store\store.jpg" />
+    <Content Include="Template\img_store\store.png" />
+    <Content Include="Template\img_store\Tablet.jpg" />
+    <Content Include="Template\img_store\tablet1.jpg" />
+    <Content Include="Template\img_store\TaiNghe.jpg" />
+    <Content Include="Template\img_store\TaiNghe1.jpg" />
+    <Content Include="Template\js\bootstrap.min.js" />
+    <Content Include="Template\js\jquery-3.3.1.min.js" />
+    <Content Include="Template\js\jquery-ui.min.js" />
+    <Content Include="Template\js\jquery.nice-select.min.js" />
+    <Content Include="Template\js\jquery.slicknav.js" />
+    <Content Include="Template\js\main.js" />
+    <Content Include="Template\js\mixitup.min.js" />
+    <Content Include="Template\js\owl.carousel.min.js" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Template\fonts\ElegantIcons.eot" />
+    <Content Include="Template\fonts\ElegantIcons.ttf" />
+    <Content Include="Template\fonts\ElegantIcons.woff" />
+    <Content Include="Template\fonts\fontawesome-webfont.eot" />
+    <Content Include="Template\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Template\fonts\fontawesome-webfont.woff" />
+    <Content Include="Template\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Template\fonts\FontAwesome.otf" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Shared\LayoutDK.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\Shared\LayoutDN.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Shared\DangNhapMuaHang.cshtml" />
+    <Content Include="Views\Shared\LayoutAdmin.cshtml" />
+    <Content Include="TemplateAdmin\assets\css\style.css.map" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Bold.eot" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Bold.woff" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Bold.woff2" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Light.eot" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Light.woff" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Light.woff2" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Medium.eot" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Medium.woff" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Medium.woff2" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Regular.eot" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Regular.ttf" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Regular.woff" />
+    <Content Include="TemplateAdmin\assets\fonts\Ubuntu\Ubuntu-Regular.woff2" />
+    <Content Include="TemplateAdmin\assets\scss\components\_badges.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_bootstrap-progress.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_breadcrumbs.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_buttons.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_cards.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_checkbox-radio.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_dropdown.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_forms.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_icons.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_lists.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_preview.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_tables.scss" />
+    <Content Include="TemplateAdmin\assets\scss\components\_todo-list.scss" />
+    <Content Include="TemplateAdmin\assets\scss\landing-screens\_auth.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_animation.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_background.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_badges.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_blockqoute.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_breadcrumbs.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_buttons.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_cards.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_misc.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_pagination.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_popovers.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_text.scss" />
+    <Content Include="TemplateAdmin\assets\scss\mixins\_tooltips.scss" />
+    <Content Include="TemplateAdmin\assets\scss\style.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_dashboard.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_demo.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_fonts.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_footer.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_functions.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_layouts.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_misc.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_navbar.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_reset.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_sidebar.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_typography.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_utilities.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_variables.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_vertical-wrapper.scss" />
+    <Content Include="TemplateAdmin\assets\scss\_widget-grid.scss" />
+    <Content Include="TemplateAdmin\assets\vendors\js\bootstrap.min.js.map" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="TemplateAdmin\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\DangKy.cshtml" />
+    <Content Include="Views\Admin\DangNhap.cshtml" />
+    <Content Include="Views\Product\ListProducts.cshtml" />
+    <Content Include="Views\Admin\CreateProduct.cshtml" />
+    <Content Include="Views\Admin\ListProducts.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\DeleteProduct.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\User\ProductDetail.cshtml" />
+    <Content Include="Views\User\ProductType.cshtml" />
+    <Content Include="Views\Home\ProductType.cshtml" />
+    <Content Include="Views\Shared\Layout_GioHang.cshtml" />
+    <Content Include="Views\ListCart\ListCarts.cshtml" />
+    <Content Include="Views\Shared\Layout_DatHang.cshtml" />
+    <Content Include="Views\ListCart\DatHang.cshtml" />
+    <Content Include="Views\Shared\Layout_XacNhanDon.cshtml" />
+    <Content Include="Views\ListCart\XacNhanDonHang.cshtml" />
+    <Content Include="Views\Admin\ListOrder.cshtml" />
+    <Content Include="Views\Admin\ListCus.cshtml" />
+    <Content Include="Views\Admin\ListOrderDetail.cshtml" />
+    <Content Include="Views\Admin\EditOrder.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\DeleteOrder.cshtml" />
+    <Content Include="Views\Shared\Layout_Edit.cshtml" />
+    <Content Include="Views\Admin\EditCus.cshtml" />
+    <Content Include="Views\Shared\Layout_PD.cshtml" />
+    <Content Include="Views\Shared\Layout_UserXemDon.cshtml" />
+    <Content Include="Views\User\XemDonHang.cshtml" />
+    <Content Include="Views\User\XemCTDonHang.cshtml" />
+    <Content Include="Views\Admin\ListAd.cshtml" />
+    <Content Include="Views\Admin\EditAd.cshtml" />
+    <Content Include="Views\Admin\ThongKe.cshtml" />
+    <Content Include="Views\Admin\BaoHanh.cshtml" />
+    <Content Include="Views\Admin\ListNCC.cshtml" />
+    <Content Include="Views\Admin\C_NCC.cshtml" />
+    <Content Include="Views\Admin\D_NCC.cshtml" />
+    <Content Include="Views\Admin\E_NCC.cshtml" />
+    <Content Include="Views\Admin\ListLSP.cshtml" />
+    <Content Include="Views\Admin\C_LSP.cshtml" />
+    <Content Include="Views\Admin\E_LSP.cshtml" />
+    <Content Include="Views\Admin\D_LSP.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Template\img\w\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59689</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44377/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!--<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

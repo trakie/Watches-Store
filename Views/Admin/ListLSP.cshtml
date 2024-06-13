@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Watches.LoaiSP>
+
+@{
+    ViewBag.Title = "ListLSP";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách Loại sản phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "C_LSP")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoaiSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoaiSP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoaiSP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "E_LSP", new { id=item.MaLoaiSP }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Delete", "D_LSP", new { id=item.MaLoaiSP })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/LayoutDN.cshtml";
+}
+
+<div class="wrapper">
+    <div class="title">
+        Login 
+    </div>
+    <form action="/User/Login" method="post">
+        <div class="field">
+            <input type="text" name="TenDN" required>
+            <label>Tài khoản:</label>
+        </div>
+        <div class="field">
+            <input type="password" name="Matkhau" required>
+            <label>Mật khẩu:</label>
+        </div>
+        <p style="color:red">@ViewBag.ThongBao</p>
+        <div class="field">
+
+            <input type="submit" value="Đăng nhập">
+        </div>
+        <div class="signup-link">
+            Not a member?
+            @Html.ActionLink("Đăng ký", "DangKy")
+        </div>
+    </form>
+</div>
+

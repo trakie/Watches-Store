@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Watches.KHACHHANG>
+
+@{
+    ViewBag.Title = "ListCus";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<
+<h2>Danh sách khách hàng</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Taikhoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Matkhau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiachiKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DienthoaiKH)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiachiKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienthoaiKH)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "EditCus", new { @id = item.MaKH }) |
+
+
+                @Html.ActionLink("Delete", "DeleteCus", new { @id = item.MaKH })
+            </td>
+        </tr>
+    }
+
+</table>

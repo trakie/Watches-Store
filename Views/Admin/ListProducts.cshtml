@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Watches.SANPHAM>
+
+@{
+    ViewBag.Title = "ListProducts";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh Sách Sản Phẩm</h2>
+<p>
+    @Html.ActionLink("Create New", "CreateProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã SP
+        </th>
+        <th>
+            Tên SP
+        </th>
+        <th>
+            Giá bán
+        </th>
+        <th>
+            Ảnh SP
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Loại Sản Phẩm
+        </th>
+        <th>
+            Tên nhà cung cấp
+        </th>
+        <th>
+            Thời lượng bảo hành
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Giaban)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ThoiLuongBaoHanh)
+                </td>*@
+
+            <td>
+                @*@Html.DisplayFor(modelItem => item.AnhSP)*@
+                <img src="~/Content/Images/@item.AnhSP" alt="Hinh san pham" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluongton)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiSP.TenLoaiSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NHACUNGCAP.TenNCC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThoiLuongBaoHanh)
+            </td>
+
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "EditProduct", new { id = item.MaSP }) |
+                @Html.ActionLink("Xóa", "DeleteProduct", new { id = item.MaSP })
+            </td>
+        </tr>
+    }
+
+</table>

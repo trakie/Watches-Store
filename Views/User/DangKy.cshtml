@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/LayoutDK.cshtml";
+}
+
+    <div class="container">
+
+        @Html.ValidationSummary(true)
+        <div class="content">
+            <div class="title">Đăng Ký</div>
+            <form action="/User/DangKy" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Họ tên:</span>
+
+                        <input type="text" name="HoTen" placeholder="Nhập họ tên" required>
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Tài khoản</span>
+
+                        <input type="text" name="TenDN" placeholder="Nhập tài khoản" required>
+                        @ViewData["Loi2"]
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+
+                        <input type="email" name="Email" placeholder="Nhập email" required>
+                        @ViewData["Loi6"]
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Số điện thoại</span>
+
+                        <input type="text" name="DienThoai" placeholder="Nhập SĐT" required>
+                        @ViewData["Loi5"]
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mật khẩu</span>
+
+                        <input type="password" name="MK" placeholder="Nhập mật khẩu" required>
+                        @ViewData["Loi3"]
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mật khẩu nhập lại</span>
+
+                        <input type="password" name="MKLai" placeholder="Nhập lại mật khẩu" required>
+                        @ViewData["Loi4"]
+
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Ngày sinh:</span>
+
+                        <input type="date" name="NgaySinh" />
+                        @ViewData["Loi7"]
+
+                    </div>
+                    <div class="input-box">
+                        <span class="diachi">Địa chỉ:</span>
+
+                        <input type="text" name="DiaChi"  placeholder="Địa chỉ" required/>
+                        @ViewData["Loi8"]
+
+                    </div>
+                </div>
+              
+                    <div class="button">
+                        <input type="submit" value="Đăng ký">
+                    </div>
+             
+                </form>
+        </div>
+       
+    </div>
+
+
+

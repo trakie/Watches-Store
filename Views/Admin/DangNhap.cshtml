@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/LayoutDN.cshtml";
+}
+
+
+
+<div class="wrapper">
+    <div class="title">
+        Login Admin
+    </div>
+    <form action="/Admin/DangNhap" method="post">
+        <div class="field">
+            <input type="text" name="TenDN" required>
+            <label>Tài khoản:</label>
+        </div>
+        <div class="field">
+            <input type="password" name="Matkhau" required>
+            <label>Mật khẩu:</label>
+        </div>
+        <p style="color:red">@ViewBag.ThongBao</p>
+        <div class="field">
+            <input type="submit" value="Login">
+        </div>
+
+    </form>
+</div>
+
+

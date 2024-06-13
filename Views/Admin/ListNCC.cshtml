@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Watches.NHACUNGCAP>
+
+@{
+    ViewBag.Title = "ListNCC";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>ListNCC</h2>
+
+<p>
+    @Html.ActionLink("Create New", "C_NCC")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "E_NCC", new { id=item.MaNCC }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Delete", "D_NCC", new {id=item.MaNCC })
+        </td>
+    </tr>
+}
+
+</table>

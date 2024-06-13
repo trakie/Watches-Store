@@ -1,0 +1,125 @@
+﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+@model Watches.SANPHAM
+@{ 
+    Layout = null;
+    IEnumerable<DanhGia> DG= ViewData["DanhGia"] as IEnumerable<DanhGia>;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Product Detail</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+   @* <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="~/Template/CSS_PD/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-4"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                            <div class="tab-pane" id="pic-5"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                            <li><a data-target="#pic-5" data-toggle="tab"><img src="~/Content/Images/@Html.DisplayFor(model => model.AnhSP)" /></a></li>
+                        </ul>
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">@Model.TenSP</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+
+                        <h4 class="price">Giá tiền: <span>@Model.Giaban</span></h4>
+                        <h4 class="price">Số lượng: <span>@Model.Soluongton</span></h4>
+                        <p class="vote"><strong></strong> <strong></strong></p>
+                        <h5 class="sizes">
+                        </h5>
+                        <h5 class="colors">
+                        </h5>
+                        <div class="action">
+
+
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+    <div class="container mt-5 mb-5">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="p-3">
+                        <h6>Comments</h6>
+                    </div>
+                    <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                        @*<img src="https://i.imgur.com/zQZSWrt.jpg" width="50" class="rounded-circle mr-2">*@
+                        <input type="text" class="form-control" placeholder="Enter your comment...">
+                        <input type="number" class="form-control" min="1" max="10" placeholder="Điểm số">
+                        <button type="button" class="btn btn-info pull-right" style="margin-top:80px">Post</button>
+                        @*<input type="number" style="margin-top:80px"min="1" max="5">*@
+                    </div>
+                     
+                    <div class="mt-2">
+                        @foreach (var item in DG)
+                        {
+                            <div class="d-flex flex-row p-3">
+                                @*<img src="https://i.imgur.com/zQZSWrt.jpg" width="40" height="40" class="rounded-circle mr-3">*@
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center"> <span class="mr-2">@item.KHACHHANG.HoTen</span> <small class="c-badge">@item.DiemDanhGia</small> </div> <small>@item.NgayTao</small>
+                                    </div>
+                                    <p class="text-justify comment-text mb-0">
+                                        @item.NhanXet
+                                    </p>
+                                    <div class="d-flex flex-row user-feed"> <span class="wish"><i class="fa fa-heartbeat mr-2"></i>@item.DiemDanhGia</span> <span class="ml-3"><i class="fa fa-comments-o mr-2"></i>Reply</span> </div>
+                                </div>
+                            </div>
+                        }
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

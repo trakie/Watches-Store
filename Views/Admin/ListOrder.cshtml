@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Watches.DONDATHANG>
+
+@{
+    ViewBag.Title = "ListOrder";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách đơn hàng</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Đơn
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Ngày giao
+        </th>
+       
+        <th>
+            Họ tên
+        </th>
+        <th>
+            Lý do bảo hành
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDonHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaydat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaygiao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LyDoBaoHanh)
+
+    </td>
+    
+    <td>
+        <a href="@Url.Action("EditOrder","Admin",new { @id=item.MaDonHang})">
+            Edit
+        </a> |
+        @Html.ActionLink("Details", "ListOrderDetail", new { @id = item.MaDonHang }) |
+        <a href="@Url.Action("DeleteOrder","Admin",new { @id=item.MaDonHang})">
+            Delete
+        </a>
+    </td>
+</tr>
+}
+
+</table>
