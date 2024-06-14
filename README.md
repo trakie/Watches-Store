@@ -1,0 +1,3 @@
+- Triển khai bằng ASP.NET MVC, HTML5, CSS, JS, MS-SQL
+- Chức năng xem, đặt mua, đánh giá sản phẩm cho người dùng
+- Quản lý doanh số, CRUD sản phẩm, nhà cung cấp, phân loại,... cho người quản trị
